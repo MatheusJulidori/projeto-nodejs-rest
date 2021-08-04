@@ -1,22 +1,26 @@
 {
-  "name": "projeto-nodejs-rest",
-  "version": "1.0.0",
-  "description": "Projeto teste",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MatheusJulidori/projeto-nodejs-rest.git"
-  },
-  "author": "Julidori Matheus",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MatheusJulidori/projeto-nodejs-rest/issues"
-  },
-  "homepage": "https://github.com/MatheusJulidori/projeto-nodejs-rest#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+    "name": "projeto-nodejs-rest",
+    "version": "1.0.0",
+    "description": "Projeto teste",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "npx nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MatheusJulidori/projeto-nodejs-rest.git"
+    },
+    "author": "Julidori Matheus",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/MatheusJulidori/projeto-nodejs-rest/issues"
+    },
+    "homepage": "https://github.com/MatheusJulidori/projeto-nodejs-rest#readme",
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.12"
+    }
 }
