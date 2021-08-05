@@ -1,0 +1,6 @@
+"Esse .txt é apenas para anotações da funcionalidade das biblitoecas instaladas
+
+Nodemon: Auto restart do server quando alterar arquivo de
+Consign: (Estudar melhor depois) Agrupar todas as rotas criadas para poder passar o 
+        objeto APP para elas como argumento, e importar as rotas na config do servidores
+MySQL: BD"
