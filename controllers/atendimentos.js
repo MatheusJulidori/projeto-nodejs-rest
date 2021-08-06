@@ -6,8 +6,7 @@ module.exports = app => { //Exportando o modulo
 
     app.post('/atendimentos', (req, res) => {
         const atendimento = req.body
-        Atendimento.adiciona(atendimento)
-        res.send('voce está na rota de atendimentos post')
+        Atendimento.adiciona(atendimento, res) //chamando metodo adiciona do models, passando o atendimento que foi criado com a req.body e a res
     })
 
 }
