@@ -1,17 +1,27 @@
 const conexao = require('../infra/conexao')
+const uploadDeArquivo = require('../arquivos/uploaddeArquivos')
+
 
 class Pet {
 
     adiciona(pet, res) {
         const sql = 'INSERT INTO Pets SET ?'
 
-        conexao.query(sql, pet, (erro) => {
+        uploadDeArquivo(pet.imagem, pet.nome, (erro, novoCaminho) => { //Pega a imagem recebida do pet, passa pela função de upload de arquivos, e salva isso pra poder jogar pro banco
             if (erro) {
-                res.status(400).json(erro)
+                res.status(415).json(erro)
             } else {
-                res.status(200).json(pet)
+                const novoPet = { nome: pet.nome, imagem: novoCaminho }
+                conexao.query(sql, novoPet, (erro) => {
+                    if (erro) {
+                        res.status(400).json(erro)
+                    } else {
+                        res.status(200).json(novoPet)
+                    }
+                })
             }
         })
+
 
     }
 
