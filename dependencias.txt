@@ -5,5 +5,8 @@ Consign: (Estudar melhor depois) Agrupar todas as rotas criadas para poder passa
         objeto APP para elas como argumento, e importar as rotas na config do servidores
 MySQL: BD"
 
+arquivos: manipulação de arquivos
 models: Faz a conexão e envia dados pro banco, fazer validação de regras de negócios
 controllers: Decidir para onde vai mandar, qual requisição, qual parte do model chamar para cada requisição
+infra: tudo que diz respeito a manipulação no bd
+config: configurações do Express
