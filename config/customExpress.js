@@ -1,16 +1,16 @@
-const express = require('express') //Declaração do express(biblioteca pra criar servidor)
-const consign = require('consign') //importa consign, pra poder agrupar todas as rotas que forem criadas dentro dos controllers
-
+const express = require('express')
+const consign = require('consign')
+const bodyParser = require('body-parser')
+ 
 module.exports = () => {
-
-    const app = express() //Declaração do app rodando express 
-
-    app.use(express.json()) //Configurando decodificador de body json
-    app.use(express.urlencoded({ extended: true })) //Configurando decodificador de body urlencoded
-
-    consign()
-        .include('controllers') //inclui a pasta controllers com as rotas
-        .into(app) //passa o app para todas as rotas no controller
-
-    return app
+ const app = express()
+ 
+ app.use(bodyParser.json())
+ app.use(bodyParser.urlencoded({ extended: true }))
+ 
+ consign()
+   .include('controllers')
+   .into(app)
+ 
+ return app
 }

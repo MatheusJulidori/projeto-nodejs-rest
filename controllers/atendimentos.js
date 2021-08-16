@@ -1,27 +1,28 @@
-const Atendimento = require('../models/atendimentos');
+const Atendimento = require('../models/atendimentos')
 
-module.exports = app => { //Exportando o modulo
-
-
-
-    //CREATE
-    app.post('/atendimentos', (req, res) => {
-        const atendimento = req.body
-        Atendimento.adiciona(atendimento, res) //chamando metodo adiciona do models, passando o atendimento que foi criado com a req.body e a res
-    })
-
-
-    //READ
+module.exports = app => {
     app.get('/atendimentos', (req, res) => {
-        Atendimento.lista(res)
+        Atendimento.lista()
+            .then(resultados => res.json(resultados))
+            .catch(erros => res.status(400).json(erros))
     })
 
     app.get('/atendimentos/:id', (req, res) => {
         const id = parseInt(req.params.id)
-        Atendimento.buscaId(id, res)
+
+        Atendimento.buscaPorId(id, res)
     })
 
-    //UPDATE
+    app.post('/atendimentos', (req, res) => {
+        const atendimento = req.body
+
+        Atendimento.adiciona(atendimento)
+            .then(atendimentoCadastrado =>
+                res.status(201).json(atendimentoCadastrado)
+            )
+            .catch(erros => res.status(400).json(erros))
+    })
+
     app.patch('/atendimentos/:id', (req, res) => {
         const id = parseInt(req.params.id)
         const valores = req.body
@@ -29,13 +30,9 @@ module.exports = app => { //Exportando o modulo
         Atendimento.altera(id, valores, res)
     })
 
-    //DELETE
     app.delete('/atendimentos/:id', (req, res) => {
         const id = parseInt(req.params.id)
 
-        Atendimento.apagar(id, res)
+        Atendimento.deleta(id, res)
     })
-
-
-
 }
