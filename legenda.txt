@@ -1,0 +1,28 @@
+"Esse .txt é apenas para anotações da funcionalidade das biblitoecas instaladas e responsabilidade de cada pasta
+
+Nodemon: Auto restart do server quando alterar arquivo de
+Consign: (Estudar melhor depois) Agrupar todas as rotas criadas para poder passar o 
+        objeto APP para elas como argumento, e importar as rotas na config do servidores
+MySQL: BD"
+
+arquivos: manipulação de arquivos
+
+Modelo MVC: 
+models: Responsável pela validações referentes as regras de negócios
+
+controllers: Quando chegarmos à nossa rota de atendimentos do app.get() o controller direcionará quem chamaremos para passar ou pedir informações, além de fazer validações de segurança.
+             Outra responsabilidade dele será responder nosso cliente, ou nossa View. Então, o controller será o intermediário entre nossa camada que precisa de dados determinados
+             e a que os fornecerá. Portanto, precisaremos tanto passá-los para frente quanto pegar esses dados e responder.
+
+Modelo Repository:
+Repositorios: Tudo que precisamos fazer referente ao nosso CRUD e a buscar informações. Esse repositório é nossa camada de dados.
+              Então, ele é responsável por lidar com os dados para nós, para não precisarmos nos preocupar de onde vêm esses dados.
+
+Promises: Promise é um objeto usado para processamento assíncrono. Um Promise (de "promessa") representa um valor que pode estar disponível agora, no futuro ou nunca.
+          Uma Promise representa um proxy para um valor que não é necessariamente conhecido quando a promessa é criada. Isso permite a associação de métodos de tratamento 
+          para eventos da ação assíncrona num caso eventual de sucesso ou de falha. Isto permite que métodos assíncronos retornem valores como métodos síncronos: ao invés 
+          do valor final, o método assíncrono retorna uma promessa ao valor em algum momento no futuro.
+
+
+infra: tudo que diz respeito a manipulação no bd
+config: configurações do Express

@@ -24,7 +24,7 @@ module.exports = (caminho, nomeDoArquivo, callbackImagemCriada) => {
     const tipoEhValido = tiposValidos.indexOf(tipo.substring(1)) !== -1 //Pergunta se o index do tipo de arquivo que recebi é diferente de -1(ou sje,a é valido)
 
     if (tipoEhValido) { //verifica se o tipo é valido
-        const novoCaminho = `./assets/imagens/${nomeDoArquivo}${tipo}`
+        const novoCaminho = `../assets/imagens/${nomeDoArquivo}${tipo}`
         fs.createReadStream(caminho) // Uma stream funciona através da emissão de eventos
             .pipe(fs.createWriteStream(novoCaminho)) // Cria uma stream e pega os valores da stream e joga num 'cano' para poder reescrever a imagem
             .on('finish', () => {

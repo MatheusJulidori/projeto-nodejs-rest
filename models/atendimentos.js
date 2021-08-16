@@ -1,6 +1,6 @@
 const { default: axios } = require('axios')
 const moment = require('moment')
-const conexao = require('../infra/conexao')
+const conexao = require('../infra/database/conexao')
 
 
 class Atendimento {
